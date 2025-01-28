@@ -10,6 +10,16 @@ public class Epic extends Task {
         this.subtasks = subtasks;
     }
 
+    @Override
+    public boolean matches(String query) {
+        for (String subtask : subtasks) {
+            if (subtask.toLowerCase().contains(query.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String[] getSubtasks() {
         return subtasks;
     }

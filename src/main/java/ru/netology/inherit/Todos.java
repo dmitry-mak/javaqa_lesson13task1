@@ -13,6 +13,16 @@ public class Todos {
         return tmp;
     }
 
+    public Task[] search(String query) {
+        Task[] result = new Task[0];
+        for (Task task : tasks) {
+            if (task.matches(query)) {
+                result = addToArray(result, task);
+            }
+        }
+        return result;
+    }
+
     public void add(Task task) {
         tasks = addToArray(tasks, task);
     }

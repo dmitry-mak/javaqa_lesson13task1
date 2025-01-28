@@ -12,4 +12,12 @@ public class SimpleTask extends Task {
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public boolean matches(String query) {
+        if (title.toLowerCase().contains(query.toLowerCase())) {
+            return true;
+        }
+        return false;
+    }
 }

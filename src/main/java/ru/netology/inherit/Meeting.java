@@ -13,6 +13,17 @@ public class Meeting extends Task {
         this.start = start;
     }
 
+    @Override
+    public boolean matches(String query) {
+        if (topic.toLowerCase().contains(query.toLowerCase())) {
+            return true;
+        }
+        if (project.toLowerCase().contains(query.toLowerCase())) {
+            return true;
+        }
+        return false;
+    }
+
     public String getTopic() {
         return topic;
     }
